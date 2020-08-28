@@ -1,0 +1,14 @@
+{
+  "name": "mock-be",
+  "version": "1.0.0",
+  "description": "Mock backend on Node.js for 'Tag it' application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Viktoriia Kniazeva",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
