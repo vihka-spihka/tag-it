@@ -1,11 +1,11 @@
 /* Filling USERS table with 2 test users */
-INSERT INTO USERS (EMAIL, NICKNAME)
+INSERT INTO USERS (email, nickname, password)
 VALUES
-	('koko@tag.it', 'koko'),
-	('winston@tag.it', 'winston');
+	('koko@tag.it', 'koko', 'passw0rd'),
+	('winston@tag.it', 'winston', 'p@ssword');
 
 /* Filling CATEGORIES table with 5 test categories (2 for the first test user, the rest for the second one) */
-INSERT INTO CATEGORIES (USER_ID, NICKNAME, DESCRIPTION)
+INSERT INTO CATEGORIES (user_id, nickname, description)
 VALUES
 	(1, 'Health Care', 'A list of my Health Care team'),
 	(1, 'Relatives', 'Family addresses'),
@@ -14,7 +14,7 @@ VALUES
 	(2, 'Food & Drinks', 'Verified places with tasty food and good drinks');
 
 /* Filling PLACES table with 12 test places */
-INSERT INTO PLACES (NICKNAME, COORDINATES, DESCRIPTION)
+INSERT INTO PLACES (nickname, coordinates, description)
 VALUES
 	('PCP', '37.341035, -121.910860', 'MD Greg House'),
 	('Psychiatrist', '37.351946, -121.975385', 'MD Cal Lightman, suite 333'),
@@ -30,7 +30,7 @@ VALUES
 	('The Cheescake Factory', '37.251919, -121.861693', 'Om-nom-nom, Pumpkin Cheesecakes starting from September');
 
 /* Filling CATEGORIES_PLACES table with 13 test connections between Categories and Places for both test users */
-INSERT INTO CATEGORIES_PLACES (CATEGORY_ID, PLACE_ID)
+INSERT INTO CATEGORIES_PLACES (category_id, place_id)
 VALUES
 	(1, 1),
 	(1, 2),
