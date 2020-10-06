@@ -22,9 +22,11 @@ CREATE TABLE CATEGORIES (
 /* PLACES table is a list of places that were added to at least one of the existed categories */
 CREATE TABLE PLACES (
 	place_id INTEGER PRIMARY KEY NOT NULL,
+	user_id INTEGER NOT NULL,
 	nickname TEXT NOT NULL,
 	coordinates TEXT NOT NULL,
-	description TEXT
+	description TEXT,
+	FOREIGN KEY (user_id) REFERENCES USERS (user_id) ON DELETE CASCADE
 );
 
 /* CATEGORIES_PLACES table represents the relationship between existing categories and places */
