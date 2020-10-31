@@ -4,8 +4,8 @@ PRAGMA foreign_keys = ON;
 /* USERS table is a list of signed up users */
 CREATE TABLE USERS (
 	user_id INTEGER PRIMARY KEY NOT NULL,
-	email TEXT NOT NULL,
-	nickname TEXT NOT NULL,
+	email TEXT NOT NULL UNIQUE,
+	nickname TEXT NOT NULL UNIQUE,
 	password TEXT NOT NULL
 );
 

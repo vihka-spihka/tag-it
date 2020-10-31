@@ -1,0 +1,73 @@
+type Query {
+	getUserInfo(user_id: ID!): User
+	getUserCategories(user_id: ID!): [Category!]
+	getUserPlaces(user_id: ID!): [Place!]
+	getPlacesFromCategory(category_id: ID!): [Place!]
+	getCategoryInfo(category_id: ID!): Category
+	getPlaceInfo(place_id: ID!): Place
+},
+
+type Mutation {
+	createUser(user: NewUserInput!): User! 
+	editUser(user: UserInput!): User!
+	removeUser(user_id: ID!): SimpleResponse!
+	createCategory(category: CategoryInput!, places_ids: [ID!]!): Category!
+	editCategory(category: CategoryInput!, places_ids: [ID!]!): Category!
+	removeCategory(category_id: ID!): String!
+	createPlace(place: PlaceInput!, categories_ids: [ID!]!): Place!
+	editPlace(place: PlaceInput!, categories_ids: [ID!]!): Place!
+	removePlace(place_id: ID!): String!
+}
+
+type User {
+	user_id: ID!
+	nickname: String!
+	email: String!
+	password: String!
+	categories: [Category!]!
+},
+
+type Category {
+	category_id: ID!
+	nickname: String!
+	icon: String
+	description: String
+	places: [Place!]!
+},
+
+type Place {
+	place_id: ID!
+	nickname: String!
+	coordinates: String!
+	description: String
+},
+
+type SimpleResponse {
+	code: Int!
+	message: String!
+},
+
+input NewUserInput {
+	nickname: String!
+	email: String!
+	password: String!
+},
+
+input UserInput {
+	user_id: ID!
+	nickname: String
+	email: String
+	password: String
+},
+
+input CategoryInput {
+	nickname: String!
+	icon: String
+	description: String
+},
+
+input PlaceInput {
+	nickname: String!
+	coordinates: String!
+	description: String
+},

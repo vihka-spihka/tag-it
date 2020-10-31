@@ -1,0 +1,68 @@
+{
+	getUserInfo (user_id: 1) {
+		email,
+		nickname
+	}
+}
+
+{
+	getUserCategories (user_id: 2) {
+		category_id
+		nickname
+		icon
+		description
+	}
+}
+
+{
+	getUserPlaces (user_id: 2) {
+		place_id
+		nickname
+		coordinates
+		description
+	}
+}
+
+{
+	getPlacesFromCategory (category_id: 2) {
+		place_id
+		nickname
+		coordinates
+		description
+	}
+}
+
+{
+	getCategoryInfo (category_id: 3) {
+		nickname
+		icon
+		description
+	}
+}
+
+{
+	getPlaceInfo (place_id: 5) {
+		nickname
+		coordinates
+		description
+	}
+}
+
+mutation {
+	createUser (user: { nickname: "const", email: "ololo@f.com", password: "123" }) {
+		user_id
+	}
+}
+
+mutation {
+	editUser (user: { user_id: 3, email: "new@email.com" }) {
+		user_id
+	}
+}
+
+mutation {
+	removeUser (user_id: 3) {
+		code
+		message
+	}
+}

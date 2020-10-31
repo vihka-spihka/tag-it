@@ -1,0 +1,20 @@
+{
+  "name": "be",
+  "version": "1.0.0",
+  "description": "Backend on Node.js for 'Tag it' application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --ext '.' index.js"
+  },
+  "author": "Viktoriia Kniazeva",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
